@@ -1,0 +1,23 @@
+{
+  "id": "vectorTest",
+  "title": {
+    "text": "Список правил для векторов"
+  },
+  "source": {
+    "postgresQuery": "${vectorRuleParty-select.sql}",
+    "params": [
+      {"requestName": "vectorId", "type": "Long"}
+    ],
+    "resultData": [
+      {"source": "vector_id", "target": "id", "type": "Long"}
+    ]
+  },
+  "operations": {
+    "add": {
+      "postgresQuery": "${vectorRuleParty-insert.sql}",
+      "params": [
+        {"requestName": "vectorId", "type": "Long"}
+      ]
+    }
+  }
+}
